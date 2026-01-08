@@ -1,0 +1,15 @@
+# Distribution artifacts
+*.dmg
+*.pkg
+*.zip
+
+# Build staging
+Reflect-Beta-*/
+staging/
+
+# macOS
+.DS_Store
+
+# Agent context (local only)
+agents.md
+claude.md
