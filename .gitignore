@@ -13,3 +13,5 @@ staging/
 # Agent context (local only)
 agents.md
 claude.md
+
+.gitignore  
