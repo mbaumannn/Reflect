@@ -2,9 +2,20 @@
 
 Reflect is a system-wide room correction app for macOS. It applies parametric EQ filters from Room EQ Wizard (REW) to all audio output.
 
-## Download
+## Releases
 
-See [Releases](../../releases) for the latest beta.
+### v1.0.0-beta1 (2026-01-08)
+**First Beta Release**
+
+- **System-Wide Audio Processing**: Applies PEQ corrections to all system audio.
+- **REW Import**: Import filter coefficients directly from Room EQ Wizard text exports.
+- **Visual Feedback**: Real-time frequency response graph and low-CPU breathing baseline visualization.
+- **Performance**: Optimized generic biquad filtering with minimal CPU impact.
+- **Notes**:
+  - Unsigned beta (requires Right-Click → Open on first launch).
+  - Includes `RoomCorrectorDriver` v1.0 (loopback).
+
+📥 **[Download Reflect-Beta-v1.0.0-beta1.dmg](./releases/Reflect-Beta-v1.0.0-beta1.dmg)**
 
 ## Installation
 
