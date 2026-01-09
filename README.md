@@ -52,6 +52,14 @@ Download the DMG and follow the included `INSTALL.md`.
 - macOS 13 (Ventura) or later
 - Room EQ Wizard filter export (for correction filters)
 
+## Measurements & Filters (REW)
+
+To create the measurements and PEQ filters Reflect uses, see: `REW.md`.
+
+Notes:
+- An iPhone mic can be used for a quick start, but a calibrated measurement mic is strongly recommended for best results.
+- Start by generating filters for low frequencies (room modes), and prefer cuts over boosts.
+
 ## Status
 
 🚧 **Beta** — Currently in private testing. Unsigned builds require manual installation steps.
