@@ -16,7 +16,9 @@
 
 ## Quick Installation (Recommended)
 
-1. Double-click **`Install Reflect.command`** inside the DMG.
+1. **Right-click** (or Control-click) `Install Reflect.command` and select **Open**.
+   > *Note: If you just double-click, macOS may block it with a "Malware" or "Unverified Developer" warning. This is normal for unsigned beta software. Right-click > Open allows you to bypass this.*
+2. Click **Open** in the dialog window.
 2. Enter your admin password when prompted (terminal window will open).
 3. The script will automatically:
    - Install `RoomCorrectorDriver.driver` to `/Library/Audio/Plug-Ins/HAL/`
