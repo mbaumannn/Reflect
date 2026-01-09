@@ -58,7 +58,47 @@ For a typical listening position measurement:
 
 If you care about an “area” (not a head‑in‑a‑vise point), measure a few positions around your listening spot (small movements of 10–30 cm) and average.
 
-## 5) Run Measurements (L, R, L+R)
+## 5) Multiple Mic Positions + Proper Averages
+
+Single-point measurements can change a lot with tiny mic movements. If you want EQ that stays helpful when you shift in your chair, use multiple mic positions and average them.
+
+### Recommended approach (a small “listening bubble”)
+
+Pick 3–9 mic positions around your main listening spot:
+
+- Center (your exact head position)
+- Slightly forward/back/left/right (10–30 cm)
+- Keep **ear height** and **mic pointing up** for every position
+
+Keep everything else identical:
+
+- Same REW settings, sweep level, and output gain
+- Same speaker placement and volume
+- Same room conditions (doors closed, HVAC noise minimized)
+
+### What to average (depends on how you’ll apply EQ)
+
+- **Per-channel EQ (best if your app supports L/R separately)**:
+  - Measure **Left-only** at each mic position → average those Left traces → generate Left filters
+  - Measure **Right-only** at each mic position → average those Right traces → generate Right filters
+  - Use **L+R** measurements as a sanity/validation check (not as the design trace)
+- **One shared EQ (same filters applied to both channels)**:
+  - Measure **L+R** at each mic position → average those L+R traces → generate one filter set
+
+Avoid averaging Left-only and Right-only together into one “summed” trace if you’re going to apply different filters per channel—designing per channel from per-channel averages is more robust.
+
+### How to make an average in REW
+
+1. Run and name your measurements clearly, e.g.:
+   - `Nearfield A - L`, `Nearfield B - L`, `Nearfield C - L`
+2. Open **All SPL**.
+3. Tick the traces you want to average (only the set that should be averaged together).
+4. Use REW’s **Average the Responses** function to create a new averaged trace.
+5. Rename the averaged trace to something obvious, e.g. `Nearfield Avg - L`.
+
+Use the averaged trace as the “design” trace for generating EQ filters.
+
+## 6) Run Measurements (L, R, L+R)
 
 Click **Measure** to open the measurement dialog.
 
@@ -94,7 +134,7 @@ Repeat the same L/R/L+R set at a second location you care about (e.g. “behind 
 - L vs R (speaker/room asymmetry)
 - Nearfield vs behind desk (how much the room changes with position)
 
-## 6) Sanity Check the Results
+## 7) Sanity Check the Results
 
 Before generating filters:
 
@@ -102,7 +142,7 @@ Before generating filters:
 - Use light smoothing (e.g. **1/12 octave**) to see broad trends without hiding big problems
 - Focus EQ efforts on **low frequencies** first; above a few hundred Hz you’ll mostly see position‑dependent comb filtering that EQ can’t “fix” reliably
 
-## 7) Generate PEQ Filters in REW (for Reflect)
+## 8) Generate PEQ Filters in REW (for Reflect)
 
 ### Pick a “design” trace
 
@@ -117,7 +157,7 @@ Choose the measurement that matches how you’ll apply correction:
 2. Open the **EQ** window.
 3. Set **Equaliser** to `Generic`.
 4. In **Target Settings**:
-   - Click **Calculate target level from response**
+   - Click **Calculate target level from response** (this sets the “base” / **target level** so REW isn’t trying to apply lots of boost just to reach the target)
    - Prefer **cuts over boosts** (deep nulls are usually not fixable with boost)
 5. In **Match Range**:
    - Start with something like `20 Hz – 200 Hz` (typical range where PEQ helps most with room modes)
