@@ -4,6 +4,18 @@ Reflect is a system-wide room correction app for macOS. It applies parametric EQ
 
 ## Releases
 
+### v1.0.0-beta2 (2026-01-09)
+**Performance Update**
+
+- **vDSP Optimization**: Rewrote biquad processor to use Accelerate framework SIMD operations.
+- **CPU Usage**: Reduced processing CPU from ~8% to <1% when menu closed.
+- **UI Polish**: Removed redundant glass material layer for cleaner rendering.
+- **Notes**:
+  - Unsigned beta (requires Right-Click → Open on first launch).
+  - Includes `RoomCorrectorDriver` v1.0 (loopback).
+
+📥 **[Download Reflect-Beta-v1.0.0-beta2.dmg](./releases/Reflect-Beta-v1.0.0-beta2.dmg)**
+
 ### v1.0.0-beta1 (2026-01-08)
 **First Beta Release**
 
