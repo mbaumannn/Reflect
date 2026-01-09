@@ -4,7 +4,20 @@ Reflect is a system-wide room correction app for macOS. It applies parametric EQ
 
 ## Releases
 
-### v1.0.0-beta3 (2026-01-09) ⭐ **Latest**
+### v1.0.0-beta4 (2026-01-09) ⭐ **Latest**
+**Latency Stabilization**
+
+- **Latency Cap**: Implemented target-latency cap to prevent backlog buildup (3-6 buffer periods).
+- **Buffer Negotiation**: Driver and app now negotiate and enforce buffer sizes correctly.
+- **Visuals**: Added latency estimation to status display.
+- **Stability**: Fixed CoreAudio errors during buffer size changes.
+- **Notes**:
+  - Unsigned beta (Right-click → Open on first launch)
+  - Installer handles all setup automatically
+
+📥 **[Download Reflect-Beta-v1.0.0-beta4.dmg](https://github.com/mbaumannn/Reflect/releases/download/v1.0.0-beta4/Reflect-Beta-v1.0.0-beta4.dmg)** | [Release Notes](https://github.com/mbaumannn/Reflect/releases/tag/v1.0.0-beta4)
+
+### v1.0.0-beta3 (2026-01-09)
 **Double-Click Installer**
 
 - **✨ New**: One-click installer script — just double-click `Install Reflect.command`
