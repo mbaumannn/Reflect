@@ -4,6 +4,20 @@ Reflect is a system-wide room correction app for macOS. It applies parametric EQ
 
 ## Releases
 
+### v1.0.0-beta3 (2026-01-09) ⭐ **Latest**
+**Double-Click Installer**
+
+- **✨ New**: One-click installer script — just double-click `Install Reflect.command`
+- **✨ New**: Uninstaller script for clean removal
+- **🐛 Fixed**: Menu bar icon now white when inactive (was barely visible gray)
+- **🎨 Improved**: Orange/amber icon when actively processing
+- **📦 Packaging**: Automated driver installation, Gatekeeper bypass, and audio restart
+- **Notes**:
+  - Unsigned beta (Right-click → Open on first launch)
+  - Installer handles all setup automatically
+
+📥 **[Download Reflect-Beta-v1.0.0-beta3.dmg](./releases/Reflect-Beta-v1.0.0-beta3.dmg)** | [Release Notes](./releases/v1.0.0-beta3-RELEASE-NOTES.md)
+
 ### v1.0.0-beta2 (2026-01-09)
 **Performance Update**
 
