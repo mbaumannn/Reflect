@@ -16,7 +16,7 @@ Reflect is a system-wide room correction app for macOS. It applies parametric EQ
   - Unsigned beta (Right-click → Open on first launch)
   - Installer handles all setup automatically
 
-📥 **[Download Reflect-Beta-v1.0.0-beta3.dmg](./releases/Reflect-Beta-v1.0.0-beta3.dmg)** | [Release Notes](./releases/v1.0.0-beta3-RELEASE-NOTES.md)
+📥 **[Download Reflect-Beta-v1.0.0-beta3.dmg](https://github.com/mbaumannn/Reflect/releases/download/v1.0.0-beta3/Reflect-Beta-v1.0.0-beta3.dmg)** | [Release Notes](https://github.com/mbaumannn/Reflect/releases/tag/v1.0.0-beta3)
 
 ### v1.0.0-beta2 (2026-01-09)
 **Performance Update**
@@ -28,7 +28,7 @@ Reflect is a system-wide room correction app for macOS. It applies parametric EQ
   - Unsigned beta (requires Right-Click → Open on first launch).
   - Includes `RoomCorrectorDriver` v1.0 (loopback).
 
-📥 **[Download Reflect-Beta-v1.0.0-beta2.dmg](./releases/Reflect-Beta-v1.0.0-beta2.dmg)**
+📥 **[Download Reflect-Beta-v1.0.0-beta2.dmg](https://github.com/mbaumannn/Reflect/releases/download/v1.0.0-beta2/Reflect-Beta-v1.0.0-beta2.dmg)**
 
 ### v1.0.0-beta1 (2026-01-08)
 **First Beta Release**
@@ -41,7 +41,7 @@ Reflect is a system-wide room correction app for macOS. It applies parametric EQ
   - Unsigned beta (requires Right-Click → Open on first launch).
   - Includes `RoomCorrectorDriver` v1.0 (loopback).
 
-📥 **[Download Reflect-Beta-v1.0.0-beta1.dmg](./releases/Reflect-Beta-v1.0.0-beta1.dmg)**
+📥 **[Download Reflect-Beta-v1.0.0-beta1.dmg](https://github.com/mbaumannn/Reflect/releases/download/v1.0.0-beta1/Reflect-Beta-v1.0.0-beta1.dmg)**
 
 ## Installation
 
