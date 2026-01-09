@@ -14,13 +14,21 @@
 - `RoomCorrectorDriver.driver` — Virtual audio device driver
 - `INSTALL.md` — This file
 
-## Installation Steps
+## Quick Installation (Recommended)
 
-### Step 1: Mount the DMG
+1. Double-click **`Install Reflect.command`** inside the DMG.
+2. Enter your admin password when prompted (terminal window will open).
+3. The script will automatically:
+   - Install `RoomCorrectorDriver.driver` to `/Library/Audio/Plug-Ins/HAL/`
+   - Copy `Reflect.app` to `/Applications/`
+   - Restart the audio system (`coreaudiod`)
+   - Launch the app
 
-Double-click `Reflect-Beta-vX.Y.Z.dmg` to mount it.
+## Manual Installation
 
-### Step 2: Install the Driver
+If you prefer to install manually or the script fails, follow these steps:
+
+### Step 1: Install the Driver
 
 The driver must be installed to a system directory. This requires your admin password.
 
@@ -37,11 +45,11 @@ The driver must be installed to a system directory. This requires your admin pas
 sudo cp -R /Volumes/Reflect\ Beta/RoomCorrectorDriver.driver /Library/Audio/Plug-Ins/HAL/
 ```
 
-### Step 3: Install the App
+### Step 2: Install the App
 
 Drag `Reflect.app` to your `/Applications/` folder.
 
-### Step 4: Restart the Audio System
+### Step 3: Restart the Audio System
 
 The driver won't be recognized until the audio daemon restarts.
 
@@ -52,7 +60,7 @@ sudo killall coreaudiod
 
 Your audio will briefly stop and resume. This is normal.
 
-### Step 5: Verify Driver Installation
+### Step 4: Verify Driver Installation
 
 1. Open **Audio MIDI Setup** (search in Spotlight)
 2. Look for "RoomCorrector" in the device list
@@ -60,7 +68,7 @@ Your audio will briefly stop and resume. This is normal.
 
 If you don't see it, try restarting your Mac.
 
-### Step 6: First Launch (Bypass Gatekeeper)
+### Step 5: First Launch (Bypass Gatekeeper)
 
 Because the app is unsigned, macOS will block it on first launch.
 
@@ -71,7 +79,7 @@ Because the app is unsigned, macOS will block it on first launch.
 
 You only need to do this once. After that, you can launch normally.
 
-### Step 7: Grant Permissions
+### Step 6: Grant Permissions
 
 On first launch, Reflect will request microphone access. This is required to capture audio from the virtual device.
 
@@ -91,7 +99,14 @@ On first launch, Reflect will request microphone access. This is required to cap
 
 ## Uninstallation
 
-### Remove the App
+### Quick Uninstall (Recommended)
+
+1. Double-click **`Uninstall Reflect.command`** from the DMG.
+2. Enter admin password when prompted.
+
+### Manual Uninstall
+
+#### Remove the App
 
 Drag `Reflect.app` from `/Applications/` to Trash.
 
