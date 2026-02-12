@@ -1,5 +1,7 @@
 # Reflect Installation Guide (v2 App-only)
 
+Version: **v1.0.0-beta5**
+
 > Beta notice: Reflect pre-release builds are currently unsigned.
 
 ## System Requirements
@@ -19,7 +21,7 @@
 
 1. Mount `Reflect-*.dmg`.
 2. Install the app:
-   - Recommended: run `Install Reflect.command`, or
+   - Recommended for testers: run `Install Reflect.command` (copies app + removes quarantine), or
    - Drag `Reflect.app` to `/Applications`.
 3. Launch Reflect and grant Audio Capture permission when prompted.
 
@@ -32,6 +34,12 @@ If macOS blocks launch:
 1. Open Finder -> `/Applications`
 2. Right-click `Reflect.app` -> **Open**
 3. Confirm **Open** in the dialog
+
+Optional terminal fallback:
+
+```bash
+xattr -dr com.apple.quarantine /Applications/Reflect.app
+```
 
 ## Permission Recovery
 
