@@ -1,183 +1,75 @@
-# Reflect Beta — Installation Guide
+# Reflect Installation Guide (v2 App-only)
 
-> ⚠️ **Beta Notice**: This is unsigned beta software. macOS will show security warnings during installation. These steps are required until we release a signed version.
+> Beta notice: Reflect pre-release builds are currently unsigned.
 
 ## System Requirements
 
-- macOS 13 (Ventura) or later
+- macOS 14.2 or later
 - Apple Silicon or Intel Mac
-- Administrator access
 
-## What's in the DMG
+## DMG Contents
 
-- `Reflect.app` — The menu bar application
-- `RoomCorrectorDriver.driver` — Virtual audio device driver
-- `INSTALL.md` — This file
+- `Reflect.app`
+- `Install Reflect.command`
+- `Uninstall Reflect.command`
+- `INSTALL.md`
+- `REW.md`
 
-## Quick Installation (Recommended)
+## Install in 3 Steps
 
-1. **Right-click** (or Control-click) `Install Reflect.command` and select **Open**.
-   > *Note: If you just double-click, macOS may block it with a "Malware" or "Unverified Developer" warning. This is normal for unsigned beta software. Right-click > Open allows you to bypass this.*
-2. Click **Open** in the dialog window.
-2. Enter your admin password when prompted (terminal window will open).
-3. The script will automatically:
-   - Install `RoomCorrectorDriver.driver` to `/Library/Audio/Plug-Ins/HAL/`
-   - Copy `Reflect.app` to `/Applications/`
-   - Restart the audio system (`coreaudiod`)
-   - Launch the app
+1. Mount `Reflect-*.dmg`.
+2. Install the app:
+   - Recommended: run `Install Reflect.command`, or
+   - Drag `Reflect.app` to `/Applications`.
+3. Launch Reflect and grant Audio Capture permission when prompted.
 
-## Manual Installation
+Then select your output device and press **Start Processing**.
 
-If you prefer to install manually or the script fails, follow these steps:
+## First Launch (Unsigned Build)
 
-### Step 1: Install the Driver
+If macOS blocks launch:
 
-The driver must be installed to a system directory. This requires your admin password.
+1. Open Finder -> `/Applications`
+2. Right-click `Reflect.app` -> **Open**
+3. Confirm **Open** in the dialog
 
-**Option A: Using Finder**
+## Permission Recovery
 
-1. Open a new Finder window
-2. Press `Cmd + Shift + G` (Go to Folder)
-3. Type `/Library/Audio/Plug-Ins/HAL/` and press Enter
-4. Drag `RoomCorrectorDriver.driver` from the DMG into this folder
-5. Enter your admin password when prompted
+If permission was denied:
 
-**Option B: Using Terminal**
-```bash
-sudo cp -R /Volumes/Reflect\ Beta/RoomCorrectorDriver.driver /Library/Audio/Plug-Ins/HAL/
-```
+1. In Reflect, click **Open Settings**, or open:
+   - System Settings -> Privacy & Security -> Audio Capture
+2. Enable Reflect
+3. Return to Reflect; start processing again
 
-### Step 2: Install the App
+## Uninstall
 
-Drag `Reflect.app` to your `/Applications/` folder.
-
-### Step 3: Restart the Audio System
-
-The driver won't be recognized until the audio daemon restarts.
-
-Open Terminal and run:
-```bash
-sudo killall coreaudiod
-```
-
-Your audio will briefly stop and resume. This is normal.
-
-### Step 4: Verify Driver Installation
-
-1. Open **Audio MIDI Setup** (search in Spotlight)
-2. Look for "RoomCorrector" in the device list
-3. It should show both input and output streams
-
-If you don't see it, try restarting your Mac.
-
-### Step 5: First Launch (Bypass Gatekeeper)
-
-Because the app is unsigned, macOS will block it on first launch.
-
-1. In Finder, navigate to `/Applications/`
-2. **Right-click** (or Control-click) on `Reflect.app`
-3. Select **Open** from the context menu
-4. Click **Open** in the security dialog
-
-You only need to do this once. After that, you can launch normally.
-
-### Step 6: Grant Permissions
-
-On first launch, Reflect will request microphone access. This is required to capture audio from the virtual device.
-
-1. Click **OK** when the permission dialog appears
-2. If you accidentally denied it, go to:
-   - System Settings → Privacy & Security → Microphone
-   - Enable the toggle for Reflect
-
-## Using Reflect
-
-1. Click the waveform icon in your menu bar
-2. Click **Start Processing**
-   - Reflect will automatically set your system output to "RoomCorrector"
-3. Select your physical output device (DAC/speakers) from the dropdown
-4. Import your REW filters using **Import REW Filters...**
-5. Toggle **Bypass** to compare corrected vs uncorrected audio
-
-## Uninstallation
-
-### Quick Uninstall (Recommended)
-
-1. Double-click **`Uninstall Reflect.command`** from the DMG.
-2. Enter admin password when prompted.
-
-### Manual Uninstall
-
-#### Remove the App
-
-Drag `Reflect.app` from `/Applications/` to Trash.
-
-### Remove the Driver
-
-**Option A: Using Finder**
-
-1. Press `Cmd + Shift + G` in Finder
-2. Go to `/Library/Audio/Plug-Ins/HAL/`
-3. Drag `RoomCorrectorDriver.driver` to Trash
-4. Enter admin password when prompted
-
-**Option B: Using Terminal**
-```bash
-sudo rm -rf /Library/Audio/Plug-Ins/HAL/RoomCorrectorDriver.driver
-```
-
-### Restart Audio Daemon
-```bash
-sudo killall coreaudiod
-```
+1. Run `Uninstall Reflect.command`, or remove `Reflect.app` manually.
+2. Optionally remove preferences when prompted.
 
 ## Troubleshooting
 
-### "RoomCorrector" doesn't appear in Audio MIDI Setup
+### No audio after pressing Start
 
-1. Verify the driver is in `/Library/Audio/Plug-Ins/HAL/`
-2. Run `sudo killall coreaudiod`
-3. If still missing, restart your Mac
+- Confirm a real output device is selected in Reflect.
+- Press Stop, then Start once.
+- Re-open Reflect after device/samplerate changes.
 
-### No audio output after starting Reflect
+### Permission Required shown in app
 
-1. Check that a physical output device is selected in the Reflect dropdown
-2. Verify the physical device is connected and working
-3. Check System Settings → Sound → Output shows "RoomCorrector"
+- Grant Audio Capture permission in System Settings.
+- Return to app and retry Start Processing.
 
-### App shows "Microphone permission required"
+### Device switch issues
 
-1. Go to System Settings → Privacy & Security → Microphone
-2. Find Reflect in the list and enable it
-3. If Reflect isn't listed, try launching it again
+- Stop processing.
+- Reconnect/select target output.
+- Start processing again.
 
-### Audio dropouts or crackling
+## Migration / Rollback
 
-1. Open Reflect settings
-2. Increase buffer size (trade latency for stability)
-3. Close CPU-intensive applications
+If you are migrating from the old driver-based setup, see:
 
-### App won't open ("Apple cannot check for malicious software")
+- [roomcorrector migration guide](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/MIGRATION.md)
 
-1. Right-click the app and select **Open** (not double-click)
-2. If that fails:
-   - System Settings → Privacy & Security
-   - Find the "Reflect was blocked" message
-   - Click **Open Anyway**
-
-## Providing Feedback
-
-Please report issues at: https://github.com/mbaumannn/Reflect/issues
-
-Include:
-- macOS version
-- Mac model (Intel/Apple Silicon)
-- Steps to reproduce the issue
-- Console logs if relevant (`Console.app` → filter by "Reflect" or "RoomCorrector")
-
-## Known Limitations (Beta)
-
-- Unsigned: requires manual Gatekeeper bypass
-- Manual driver installation required
-- No automatic updates
-- [Add other known issues here]
+Rollback to v1 requires using an earlier source revision; v2 runtime is now the active path.

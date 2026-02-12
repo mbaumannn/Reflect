@@ -2,6 +2,8 @@
 
 Reflect uses **parametric EQ (PEQ)** filters exported from **Room EQ Wizard (REW)**. This guide is a generally applicable walkthrough: from downloading REW, to making room measurements, to generating PEQ filters you can import into Reflect.
 
+Reflect v2 is driverless/app-only, so you do not need to install any virtual audio driver before using this workflow.
+
 ## What You Need
 
 - A Mac (or Windows/Linux) running REW
