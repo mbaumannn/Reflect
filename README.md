@@ -5,7 +5,7 @@ Reflect is a system-wide room correction app for macOS using driverless CoreAudi
 ## Status
 
 Reflect v2 is in pre-release testing and uses an app-only install flow.
-Current test release: **v1.0.0-beta5**.
+Current test release: **v1.0.0-beta8** (Phase M: native **Measure** mode, filter provenance, REW Generic save/reimport).
 
 ## Requirements
 
@@ -19,7 +19,7 @@ Current test release: **v1.0.0-beta5**.
 2. Install `Reflect.app`:
    - Easiest for testers: run `Install Reflect.command` (copies app + clears quarantine), or
    - Manual: drag `Reflect.app` to `/Applications`.
-3. Launch Reflect, grant Audio Capture permission, press **Start Processing**.
+3. Launch Reflect, grant Audio Capture permission. Load filters (**Correct** mode: import icon → REW Generic text, or **Measure** mode: complete a run and **Apply Filters**), pick your output, then press **Start Processing**.
 
 Detailed steps: [INSTALL.md](INSTALL.md)
 

@@ -1,6 +1,6 @@
 # Reflect Installation Guide (v2 App-only)
 
-Version: **v1.0.0-beta5**
+Version: **v1.0.0-beta8**
 
 > Beta notice: Reflect pre-release builds are currently unsigned.
 
@@ -25,7 +25,7 @@ Version: **v1.0.0-beta5**
    - Drag `Reflect.app` to `/Applications`.
 3. Launch Reflect and grant Audio Capture permission when prompted.
 
-Then select your output device and press **Start Processing**.
+Then, in **Correct** mode, load PEQ bands (import icon → REW file, or use **Measure** and **Apply Filters**), select your output device, and press **Start Processing**. Until bands exist, the primary button stays **Import Filters First**.
 
 ## First Launch (Unsigned Build)
 

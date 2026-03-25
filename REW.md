@@ -174,7 +174,7 @@ Practical tips:
 
 In the EQ window, export as a text “Filter Settings” file (the format that starts with `Room EQ V5...` and lists filters like `Filter 1: ON PK Fc ...`).
 
-Then import that file into Reflect via **Import REW Filters…**.
+Then import that file into Reflect: open the menu bar popover, stay in **Correct** mode, tap the **import** icon in the footer — the open panel prompt is **Import REW Filters**.
 
 ## Troubleshooting
 
