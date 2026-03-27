@@ -5,7 +5,7 @@ Reflect is a system-wide room correction app for macOS using driverless CoreAudi
 ## Status
 
 Reflect v2 is in pre-release testing and uses an app-only install flow.
-Current test release: **v1.0.0-beta8** (Phase M: native **Measure** mode, filter provenance, REW Generic save/reimport).
+Current test release: **v1.0.0-beta9** (Quality Stabilization V1 plus measurement UI cleanup: recovery/sample-rate hardening, latency reporting, safer filter transitions, soft limiter, multi-sweep measurement, and a cleaner **Measure** workflow with inline advanced sections, FAQ deep links, and footer tooltip fixes).
 
 ## Requirements
 
@@ -29,9 +29,9 @@ To create and export filters from Room EQ Wizard, see [REW.md](REW.md).
 
 ## Migration and Rollback
 
-If you previously used the legacy driver build, use the migration guide in the source repository:
+If you previously used the legacy driver build, use the migration guide in the **roomcorrector** source repository:
 
-- Migration + rollback guide: [roomcorrector/Docs/MIGRATION.md](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/MIGRATION.md)
+- [Migration and rollback](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/MIGRATION.md)
 
 ## Current Known Limitations (Pre-release)
 
@@ -40,13 +40,18 @@ If you previously used the legacy driver build, use the migration guide in the s
 - No per-app routing.
 - No IR convolution in the v2 runtime.
 
-## Build / Source Docs
+## What's New in beta9
 
-Reflect source code, architecture docs, and build instructions live in the private development repository:
+- Quality Stabilization V1 from [roomcorrector PR #29](https://github.com/mbaumannn/roomcorrector/pull/29): headroom / auto-preamp, REW shelf parity validation, sample-rate reapply, runtime recovery hardening, anti-click filter transitions, post-EQ soft limiter, latency reporting, multi-sweep averaging, level check, and Auto-EQ alignment/refinement improvements.
+- Measurement UI cleanup from [roomcorrector PR #31](https://github.com/mbaumannn/roomcorrector/pull/31): inline **Capture Options** and **Target & Analysis Options**, dedicated FAQ tab with deep links, better footer tooltip behavior, cleaner button hierarchy, and more stable popover layout.
+- Packaging remains app-only: DMG includes `Reflect.app`, install/uninstall helpers, and updated install guidance.
 
-- Source + build docs: [roomcorrector](https://github.com/mbaumannn/roomcorrector)
-- v2 architecture: [Docs/ARCHITECTURE.md](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/ARCHITECTURE.md)
-- v2 execution checklist: [Docs/TODO.md](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/TODO.md)
+## Source code and build docs
+
+This **Reflect** repository is for releases and user-facing docs. Application source, architecture notes, and build steps live in **[mbaumannn/roomcorrector](https://github.com/mbaumannn/roomcorrector)**:
+
+- [Architecture](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/ARCHITECTURE.md)
+- [Execution checklist (TODO)](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/TODO.md)
 
 ## Feedback
 

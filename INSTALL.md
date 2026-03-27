@@ -1,6 +1,6 @@
 # Reflect Installation Guide (v2 App-only)
 
-Version: **v1.0.0-beta8**
+Version: **v1.0.0-beta9**
 
 > Beta notice: Reflect pre-release builds are currently unsigned.
 
@@ -78,6 +78,6 @@ If permission was denied:
 
 If you are migrating from the old driver-based setup, see:
 
-- [roomcorrector migration guide](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/MIGRATION.md)
+- [Migration and rollback (roomcorrector)](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/MIGRATION.md)
 
 Rollback to v1 requires using an earlier source revision; v2 runtime is now the active path.
