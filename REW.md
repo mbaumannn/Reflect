@@ -1,5 +1,7 @@
 # REW Measurements (Room EQ Wizard)
 
+> **Built-in Measure mode**: Reflect includes a native measurement workflow that handles the full process — sweep, analysis, and automatic filter generation — without needing REW. Open the app, switch to **Measure** mode, and follow the prompts. Use this guide if you prefer to measure in REW and import the resulting filters manually, or want full control over the measurement and EQ generation process.
+
 Reflect uses **parametric EQ (PEQ)** filters exported from **Room EQ Wizard (REW)**. This guide is a generally applicable walkthrough: from downloading REW, to making room measurements, to generating PEQ filters you can import into Reflect.
 
 Reflect v2 is driverless/app-only, so you do not need to install any virtual audio driver before using this workflow.

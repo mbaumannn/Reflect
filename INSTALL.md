@@ -1,8 +1,8 @@
 # Reflect Installation Guide (v2 App-only)
 
-Version: **v1.0.0-beta9**
+Version: **v0.10.0**
 
-> Beta notice: Reflect pre-release builds are currently unsigned.
+> Note: Reflect builds are currently unsigned (no Apple Developer signing). First launch requires a Gatekeeper override.
 
 ## System Requirements
 
