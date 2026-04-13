@@ -16,10 +16,10 @@ Current release: **v0.10.0**
 ## Quick Install (3 steps)
 
 1. Download and mount the latest Reflect DMG.
-2. Install `Reflect.app`:
-   - Easiest: run `Install Reflect.command` (copies app + clears quarantine), or
-   - Manual: drag `Reflect.app` to `/Applications`.
-3. Launch Reflect, grant Audio Capture permission. Load filters (**Correct** mode: import icon → REW Generic text, or **Measure** mode: complete a run and **Apply Filters**), pick your output, then press **Start Processing**. Use the **Correction Strength** slider to tune how aggressively filters are applied.
+2. Drag `Reflect.app` to the **Applications** folder in the DMG window.
+3. Launch Reflect — right-click → **Open** on first launch (unsigned build). Grant Audio Capture permission. Load filters (**Correct** mode: import icon → REW Generic text, or **Measure** mode: complete a run and **Apply Filters**), pick your output, then press **Start Processing**. Use the **Correction Strength** slider to tune how aggressively filters are applied.
+
+> Tip: the DMG also includes `Install Reflect.command` which copies the app and clears quarantine in one step — useful if right-click → Open doesn't work on your system.
 
 Detailed steps: [INSTALL.md](INSTALL.md)
 

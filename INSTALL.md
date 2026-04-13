@@ -12,6 +12,7 @@ Version: **v0.10.0**
 ## DMG Contents
 
 - `Reflect.app`
+- `Applications` (symlink — drag target)
 - `Install Reflect.command`
 - `Uninstall Reflect.command`
 - `INSTALL.md`
@@ -20,10 +21,10 @@ Version: **v0.10.0**
 ## Install in 3 Steps
 
 1. Mount `Reflect-*.dmg`.
-2. Install the app:
-   - Recommended for testers: run `Install Reflect.command` (copies app + removes quarantine), or
-   - Drag `Reflect.app` to `/Applications`.
+2. Drag `Reflect.app` onto the **Applications** folder in the DMG window.
 3. Launch Reflect and grant Audio Capture permission when prompted.
+
+> **Alternative**: run `Install Reflect.command` — it copies the app and removes the quarantine attribute in one step. Useful if Gatekeeper blocks the drag-installed app on first launch.
 
 Then, in **Correct** mode, load PEQ bands (import icon → REW file, or use **Measure** and **Apply Filters**), select your output device, and press **Start Processing**. Until bands exist, the primary button stays **Import Filters First**.
 
