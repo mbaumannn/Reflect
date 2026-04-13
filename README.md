@@ -13,13 +13,14 @@ Current release: **v0.10.0**
 - Apple Silicon or Intel Mac
 - REW filter export text file (optional, for EQ correction without measuring)
 
-## Quick Install (3 steps)
+## Quick Install
 
 1. Download and mount the latest Reflect DMG.
 2. Drag `Reflect.app` to the **Applications** folder in the DMG window.
-3. Launch Reflect — right-click → **Open** on first launch (unsigned build). Grant Audio Capture permission. Load filters (**Correct** mode: import icon → REW Generic text, or **Measure** mode: complete a run and **Apply Filters**), pick your output, then press **Start Processing**. Use the **Correction Strength** slider to tune how aggressively filters are applied.
+3. **macOS will block the app on first launch** (unsigned build). Go to **System Settings → Privacy & Security → scroll down → Open Anyway** → confirm Open. This is a one-time step.
+4. Grant Audio Capture permission when prompted. Load filters (**Correct** mode: import icon → REW Generic text, or **Measure** mode: complete a run and **Apply Filters**), pick your output, then press **Start Processing**. Use the **Correction Strength** slider to tune intensity.
 
-> Tip: the DMG also includes `Install Reflect.command` which copies the app and clears quarantine in one step — useful if right-click → Open doesn't work on your system.
+Full guide including helper script and troubleshooting: [INSTALL.md](INSTALL.md)
 
 Detailed steps: [INSTALL.md](INSTALL.md)
 
