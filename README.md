@@ -20,13 +20,13 @@ Current release: **v0.10.0**
 3. **macOS will block the app on first launch** (unsigned build). Go to **System Settings → Privacy & Security → scroll down → Open Anyway** → confirm Open. This is a one-time step.
 4. Grant Audio Capture permission when prompted. Load filters (**Correct** mode: import icon → REW Generic text, or **Measure** mode: complete a run and **Apply Filters**), pick your output, then press **Start Processing**. Use the **Correction Strength** slider to tune intensity.
 
-Full guide including helper script and troubleshooting: [INSTALL.md](INSTALL.md)
+Full install guide including Gatekeeper steps and troubleshooting: [INSTALL.md](INSTALL.md)
 
 Detailed steps: [INSTALL.md](INSTALL.md)
 
-## REW Workflow
+## Measuring with REW / Importing Filters
 
-To create and export filters from Room EQ Wizard, see [REW.md](REW.md).
+Reflect includes a built-in **Measure** mode for automatic room correction — no external software needed. If you prefer to measure in Room EQ Wizard and import the resulting filters manually, see [Measuring with REW and Importing Filters](REW.md).
 
 ## Migration and Rollback
 

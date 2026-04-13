@@ -1,10 +1,16 @@
-# REW Measurements (Room EQ Wizard)
+# Measuring with REW and Importing Filters
 
-> **Built-in Measure mode**: Reflect includes a native measurement workflow that handles the full process — sweep, analysis, and automatic filter generation — without needing REW. Open the app, switch to **Measure** mode, and follow the prompts. Use this guide if you prefer to measure in REW and import the resulting filters manually, or want full control over the measurement and EQ generation process.
+## Two ways to get filters into Reflect
 
-Reflect uses **parametric EQ (PEQ)** filters exported from **Room EQ Wizard (REW)**. This guide is a generally applicable walkthrough: from downloading REW, to making room measurements, to generating PEQ filters you can import into Reflect.
+**Option A — Built-in Measure mode (no REW needed)**
+Reflect has a native measurement workflow: open the app, switch to **Measure** mode, place your mic, and follow the on-screen prompts. Reflect captures the sweep, analyses the room response, and generates parametric EQ filters automatically. Hit **Apply Filters** to load them into **Correct** mode. No external software required.
 
-Reflect v2 is driverless/app-only, so you do not need to install any virtual audio driver before using this workflow.
+**Option B — Measure in REW, import into Reflect (this guide)**
+If you want full control over the measurement process, want to use REW's averaging or windowing tools, or prefer to inspect and manually tune the EQ curve before importing — use REW to measure and generate filters, export them as a text file, and import that file into Reflect's **Correct** mode. This guide covers that workflow end-to-end.
+
+---
+
+Reflect v2 is driverless/app-only — you do not need to install any virtual audio driver before using either workflow.
 
 ## What You Need
 
@@ -174,9 +180,21 @@ Practical tips:
 
 ### Export from REW
 
-In the EQ window, export as a text “Filter Settings” file (the format that starts with `Room EQ V5...` and lists filters like `Filter 1: ON PK Fc ...`).
+In the EQ window, click **Export filter settings to text file** (or similar — exact wording varies by REW version). Save as a `.txt` file. The format starts with `Room EQ V5` and lists entries like `Filter 1: ON PK Fc 80 Hz Gain -6.0 dB BW Oct 0.333`.
 
-Then import that file into Reflect: open the menu bar popover, stay in **Correct** mode, tap the **import** icon in the footer — the open panel prompt is **Import REW Filters**.
+### Import into Reflect
+
+1. Click the Reflect icon in the menu bar to open the app.
+2. Make sure you are in **Correct** mode (top of the popover).
+3. Click the **import icon** (↑ arrow) in the bottom footer of the popover.
+4. The file picker opens with the prompt **Import REW Filters** — select your exported `.txt` file.
+5. Reflect loads the filters and shows them in the PEQ graph. The header displays the source file name as the filter provenance.
+
+**After importing:**
+- Use the **Correction Strength** slider to scale how aggressively the filters are applied (100% = full filter gain, lower = gentler correction).
+- Select your output device and press **Start Processing** to hear the correction live.
+- Use the **Bypass** toggle in the footer to A/B between corrected and uncorrected sound.
+- To save a backup copy of the loaded filters, click the **export icon** (↓ arrow) in the footer — this exports the current filter set as a new REW Generic text file.
 
 ## Troubleshooting
 
