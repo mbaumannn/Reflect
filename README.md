@@ -5,7 +5,7 @@ Reflect is a system-wide room correction app for macOS using driverless CoreAudi
 ## Status
 
 Reflect v2 is in beta. Build is unsigned — first launch requires a Gatekeeper override (right-click → Open).
-Current release: **v0.10.0**
+Current release: **v0.10.1**
 
 ## Requirements
 
@@ -40,6 +40,14 @@ If you previously used the legacy driver build, use the migration guide in the *
 - No automatic updates.
 - No per-app routing.
 - No IR convolution in the v2 runtime.
+
+## What's New in v0.10.1
+
+### Reliability
+
+- Fixed repeated output-device switching in macOS sound settings so Reflect now rebinds processing cleanly without falling into an error state after several successful recoveries
+- Improved hot-switch handling when external interfaces are connected, re-enumerated, or selected repeatedly while processing is active
+- Restored in-app FAQ/help links so measurement guidance remains reachable from the updated UI
 
 ## What's New in v0.10.0
 

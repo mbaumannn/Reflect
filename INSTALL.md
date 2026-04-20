@@ -1,6 +1,6 @@
 # Reflect Installation Guide (v2 App-only)
 
-Version: **v0.10.0**
+Version: **v0.10.1**
 
 > Note: Reflect is unsigned (no Apple Developer certificate). macOS will block the app and helper scripts on first use — see **macOS Security** below for exactly what to do.
 
@@ -90,9 +90,8 @@ If Audio Capture permission was denied:
 
 ### Device switch issues
 
-- Stop processing.
-- Reconnect/select target output.
-- Start processing again.
+- Reflect 0.10.1 improves live recovery when macOS output changes repeatedly.
+- If audio still does not recover after extreme device switching, stop processing once, confirm the intended output is selected in Reflect, then start again.
 
 ## Migration / Rollback
 
