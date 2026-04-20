@@ -1,8 +1,8 @@
-# Reflect Installation Guide (v2 App-only)
+# Reflect Installation Guide
 
 Version: **v0.10.1**
 
-> Note: Reflect is unsigned (no Apple Developer certificate). macOS will block the app and helper scripts on first use — see **macOS Security** below for exactly what to do.
+> Reflect is unsigned. macOS will block the app and helper scripts on first use until you approve them in **Privacy & Security**.
 
 ## System Requirements
 
@@ -24,11 +24,11 @@ Version: **v0.10.1**
 2. Drag `Reflect.app` onto the **Applications** folder in the DMG window.
 3. Follow the **macOS Security** steps below, then launch Reflect and grant Audio Capture permission when prompted.
 
-Then, in **Correct** mode, load PEQ bands (import icon → REW file, or use **Measure** and **Apply Filters**), select your output device, and press **Start Processing**.
+Then load filters in **Correct** mode, or use **Measure** and **Apply Filters**, choose your output device in Reflect, and press **Start Processing**.
 
 ## macOS Security (Unsigned Build)
 
-Because Reflect is not signed with an Apple Developer certificate, macOS blocks the app and the helper scripts on first use. This is expected — here is exactly what to do in each case.
+Because Reflect is not signed with an Apple Developer certificate, macOS blocks the app and helper scripts on first use. This is expected.
 
 ### Opening Reflect.app
 
@@ -44,7 +44,7 @@ Steps:
 4. Click **Open Anyway**.
 5. Confirm **Open** in the dialog that appears.
 
-Reflect will open normally from this point on.
+Reflect will open normally after this one-time approval.
 
 **Terminal shortcut** — does the same thing in one command:
 ```bash
@@ -81,7 +81,7 @@ If Audio Capture permission was denied:
 
 - Confirm a real output device is selected in Reflect.
 - Press Stop, then Start once.
-- Re-open Reflect after device or sample rate changes.
+- If the selected device disappeared, select it again in Reflect.
 
 ### Permission Required shown in app
 
@@ -90,6 +90,8 @@ If Audio Capture permission was denied:
 
 ### Device switch issues
 
+- Reflect uses the output device selected inside Reflect.
+- If you change the macOS output device, confirm the same device is selected in Reflect.
 - Reflect 0.10.1 improves live recovery when macOS output changes repeatedly.
 - If audio still does not recover after extreme device switching, stop processing once, confirm the intended output is selected in Reflect, then start again.
 
@@ -99,4 +101,4 @@ If you are migrating from the old driver-based setup, see:
 
 - [Migration and rollback (roomcorrector)](https://github.com/mbaumannn/roomcorrector/blob/main/Docs/MIGRATION.md)
 
-Rollback to v1 requires using an earlier source revision; v2 runtime is now the active path.
+Rollback to v1 requires using an earlier source revision; the current release line is app-only.

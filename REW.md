@@ -12,6 +12,8 @@ If you want full control over the measurement process, want to use REW's averagi
 
 Reflect v2 is driverless/app-only — you do not need to install any virtual audio driver before using either workflow.
 
+Reflect currently applies one shared filter set to the selected stereo output. When preparing filters in REW, design a single correction set for your listening position rather than separate left/right imports.
+
 ## What You Need
 
 - A Mac (or Windows/Linux) running REW
@@ -68,7 +70,7 @@ For a typical listening position measurement:
 
 If you care about an “area” (not a head‑in‑a‑vise point), measure a few positions around your listening spot (small movements of 10–30 cm) and average.
 
-## 5) Multiple Mic Positions + Proper Averages
+## 5) Multiple Mic Positions + Averages
 
 Single-point measurements can change a lot with tiny mic movements. If you want EQ that stays helpful when you shift in your chair, use multiple mic positions and average them.
 
@@ -86,29 +88,24 @@ Keep everything else identical:
 - Same speaker placement and volume
 - Same room conditions (doors closed, HVAC noise minimized)
 
-### What to average (depends on how you’ll apply EQ)
+### What to average for Reflect
 
-- **Per-channel EQ (best if your app supports L/R separately)**:
-  - Measure **Left-only** at each mic position → average those Left traces → generate Left filters
-  - Measure **Right-only** at each mic position → average those Right traces → generate Right filters
-  - Use **L+R** measurements as a sanity/validation check (not as the design trace)
-- **One shared EQ (same filters applied to both channels)**:
-  - Measure **L+R** at each mic position → average those L+R traces → generate one filter set
-
-Avoid averaging Left-only and Right-only together into one “summed” trace if you’re going to apply different filters per channel—designing per channel from per-channel averages is more robust.
+- Reflect uses one shared filter set for stereo playback.
+- For the final design trace, use an **L+R** measurement or an average of several nearby **L+R** measurements.
+- You can still measure **Left** and **Right** separately in REW to diagnose speaker or room asymmetry, but those are best used for analysis, not as separate imports into Reflect.
 
 ### How to make an average in REW
 
 1. Run and name your measurements clearly, e.g.:
-   - `Nearfield A - L`, `Nearfield B - L`, `Nearfield C - L`
+   - `Nearfield A - L+R`, `Nearfield B - L+R`, `Nearfield C - L+R`
 2. Open **All SPL**.
 3. Tick the traces you want to average (only the set that should be averaged together).
 4. Use REW’s **Average the Responses** function to create a new averaged trace.
-5. Rename the averaged trace to something obvious, e.g. `Nearfield Avg - L`.
+ 5. Rename the averaged trace to something obvious, e.g. `Nearfield Avg - L+R`.
 
 Use the averaged trace as the “design” trace for generating EQ filters.
 
-## 6) Run Measurements (L, R, L+R)
+## 6) Run Measurements
 
 Click **Measure** to open the measurement dialog.
 
@@ -125,11 +122,13 @@ Suggested starting settings:
 
 ### Measurement set (single position)
 
-At one mic position, do three sweeps:
+For the filter set you plan to import into Reflect, the key measurement is **L+R** at the listening position.
 
-1. **Left only** (mute/right speaker off)
-2. **Right only** (mute/left speaker off)
-3. **Both** (L+R)
+Recommended sweep set:
+
+1. **Both** (L+R) for the actual correction trace
+2. **Left only** (optional, for diagnosis)
+3. **Right only** (optional, for diagnosis)
 
 Name each measurement clearly, for example:
 
@@ -152,14 +151,14 @@ Before generating filters:
 - Use light smoothing (e.g. **1/12 octave**) to see broad trends without hiding big problems
 - Focus EQ efforts on **low frequencies** first; above a few hundred Hz you’ll mostly see position‑dependent comb filtering that EQ can’t “fix” reliably
 
-## 8) Generate PEQ Filters in REW (for Reflect)
+## 8) Generate PEQ Filters in REW for Reflect
 
 ### Pick a “design” trace
 
-Choose the measurement that matches how you’ll apply correction:
+Choose one shared design trace:
 
-- **Per‑speaker correction**: generate filters from `L` and `R` separately
-- **Single shared correction**: generate filters from an `L+R` measurement or an **average** of several nearby mic positions
+- an `L+R` measurement at the listening position, or
+- an average of several nearby `L+R` measurements
 
 ### Create conservative, robust filters
 
@@ -188,7 +187,7 @@ In the EQ window, click **Export filter settings to text file** (or similar — 
 2. Make sure you are in **Correct** mode (top of the popover).
 3. Click the **import icon** (↑ arrow) in the bottom footer of the popover.
 4. The file picker opens with the prompt **Import REW Filters** — select your exported `.txt` file.
-5. Reflect loads the filters and shows them in the PEQ graph. The header displays the source file name as the filter provenance.
+5. Reflect loads the filters and shows them in the PEQ graph. The header displays the source file name.
 
 **After importing:**
 - Use the **Correction Strength** slider to scale how aggressively the filters are applied (100% = full filter gain, lower = gentler correction).
